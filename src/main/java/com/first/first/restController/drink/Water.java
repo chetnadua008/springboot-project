@@ -1,4 +1,4 @@
-package com.first.first.restController;
+package com.first.first.restController.drink;
 
 import org.springframework.stereotype.Component;
 

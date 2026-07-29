@@ -1,4 +1,4 @@
-package com.first.first.restController;
+package com.first.first.restController.food;
 
 import org.springframework.stereotype.Component;
 
