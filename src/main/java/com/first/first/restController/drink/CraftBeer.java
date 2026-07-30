@@ -5,8 +5,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Primary
-//craftBeer bean injected @Primary annotation
 public class CraftBeer implements Drink{
+    public CraftBeer() {
+        System.out.println("In Constructor: CraftBeer");
+    }
     @Override
     public String getDrink() {
         return "This is your beer maaam";

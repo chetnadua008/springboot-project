@@ -21,6 +21,7 @@ public class RestController {
     @Autowired
     public RestController(@Qualifier("amlaPowder") Food food){
         this.food = food;
+        System.out.println("In Constructor: Rest Controller");
     }
 
     //inject property from application.properties
