@@ -27,7 +27,7 @@ public class RestController {
     @Value("${my.name}")
     private String name;
 
-    //setter method bean injection - happens after REST object created
+
     @Autowired
     public void setDrink(Drink drink){
         this.drink=drink;
