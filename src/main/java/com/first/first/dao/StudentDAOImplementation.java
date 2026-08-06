@@ -68,4 +68,37 @@ public class StudentDAOImplementation implements StudentDAO{
         return resultStudents;
     }
 
+    @Override
+    @Transactional
+    public Student updateStudentById(int id) {
+        //find student object with that id
+        Student resultStudent = entityManager.find(Student.class,id);
+        resultStudent.setEmail("test@container.com");
+        entityManager.merge(resultStudent);
+        return resultStudent;
+    }
+
+    @Override
+    @Transactional
+    public int updateLastName() {
+        int cntRowsAffected = entityManager.createQuery("UPDATE Student SET lastName='tester'").executeUpdate();
+        return cntRowsAffected;
+    }
+
+    @Override
+    @Transactional
+    public void deleteStudentById(int id){
+        Student resultStudent = entityManager.find(Student.class,id);
+        if(resultStudent==null) return;
+        System.out.println("Deleted student from db: "+resultStudent.toString());
+        entityManager.remove(resultStudent);
+    }
+
+    @Override
+    @Transactional
+    public void deleteAllStudents(){
+        int rowsAffected = entityManager.createQuery("DELETE from Student").executeUpdate();
+        System.out.println("All Student rows delted: "+rowsAffected);
+
+    }
 }
