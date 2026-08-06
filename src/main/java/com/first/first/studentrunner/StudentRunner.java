@@ -18,7 +18,7 @@ import java.util.List;
     void createStudent();
     void readStudent();
 
-    void findAllStudents();
+    List<Student> findAllStudents();
 
     void findStudentByLastName();
     void findStudentByFirstName();

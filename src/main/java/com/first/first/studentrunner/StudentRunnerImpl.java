@@ -73,15 +73,10 @@ public class StudentRunnerImpl implements StudentRunner{
         System.out.println("Find by id: "+searchStudent.toString());
     }
 
-    public void findAllStudents(){
+    public List<Student> findAllStudents(){
 
         List<Student> students = studentDao.findAll();
-        if(students.isEmpty()) System.out.println("No records found: In student table");
-        else {
-            for (Student tempStudent : students) {
-                System.out.println(tempStudent.toString());
-            }
-        }
+        return students;
     }
 
     public void findStudentByLastName(){
